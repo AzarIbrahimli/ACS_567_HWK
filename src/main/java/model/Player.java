@@ -1,13 +1,17 @@
-package Model;
+package model;
 
 import java.util.Objects;
 
 public class Player {
+    private int id;
     private String name;
     private String surname;
     private int age;
     private String team;
     private double value;
+
+    public Player() {
+    }
 
     public Player(String name, String surname, int age, String team, double value) {
         this.name = name;
@@ -16,7 +20,22 @@ public class Player {
         this.team = team;
         this.value = value;
     }
+    public Player(int id, String name, String surname, int age, String team, double value) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.team = team;
+        this.value = value;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -70,10 +89,11 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", team='" + team + '\'' +
                 ", age=" + age +
+                ", team='" + team + '\'' +
                 ", value=" + value +
                 '}';
     }
